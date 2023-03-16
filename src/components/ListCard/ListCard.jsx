@@ -13,7 +13,7 @@ const ListCard = (props) => {
   };
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    page === 1 && window.scrollTo(0, 0);
     switch (type) {
       case 'popular': {
         const fetchMovie = async () => {
