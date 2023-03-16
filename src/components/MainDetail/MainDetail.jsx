@@ -8,6 +8,7 @@ const MainDetail = (props) => {
   const [info, setInfo] = React.useState();
   const [casters, setCasters] = React.useState([]);
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     const fetchData = async () => {
       let data = await moviesAPI.getInfo(id);
       let cas = await moviesAPI.getCaster(id);

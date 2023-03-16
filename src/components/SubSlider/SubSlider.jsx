@@ -7,11 +7,13 @@ import 'swiper/css';
 import { Autoplay } from 'swiper';
 import 'swiper/css/autoplay';
 import SSliderItem from './SSliderItem';
+import { useNavigate } from 'react-router-dom';
 
 const SubSlider = (props) => {
   const [movies, setMovies] = React.useState([]);
   const [title, setTitle] = React.useState('');
   const { type, id, hidebtn } = props;
+  const navi = useNavigate();
 
   React.useEffect(() => {
     switch (type) {
@@ -63,7 +65,7 @@ const SubSlider = (props) => {
         {!hidebtn && (
           <button
             onClick={(e) => {
-              window.location.href = `/${type || 'popular'}`;
+              type ? navi(`/${type}`) : navi('/popular');
             }}
           >
             show all

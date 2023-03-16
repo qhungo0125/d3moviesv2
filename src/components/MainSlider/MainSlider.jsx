@@ -9,6 +9,7 @@ import 'swiper/css/autoplay';
 const MainSlider = () => {
   const [movies, setMovies] = React.useState([]);
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     const getPopular = async () => {
       let movies = await moviesAPI.getPopularMovies();
       setMovies(movies.results);
