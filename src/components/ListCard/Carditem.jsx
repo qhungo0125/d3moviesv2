@@ -1,14 +1,13 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { useNavigate } from 'react-router-dom';
 
 const Carditem = (props) => {
   const { info } = props;
+  const navi = useNavigate();
   // console.log('1', info);
   return (
-    <div
-      onClick={(e) => (window.location.href = `/detail/${info.id}`)}
-      className="cardItem"
-    >
+    <div onClick={(e) => navi(`/detail/${info.id}`)} className="cardItem">
       <div className="overlay"></div>
       <LazyLoadImage
         effect="opacity"

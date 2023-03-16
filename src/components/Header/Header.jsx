@@ -3,13 +3,13 @@ import './Header.scss';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrClose } from 'react-icons/gr';
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [searchContent, setContent] = React.useState('');
   const [showNav, setShowNav] = React.useState(false);
   const [showSearch, setShowSearch] = React.useState(false);
-
+  const navi = useNavigate();
   return (
     <div className="header__container">
       <div className="header__search">
@@ -21,9 +21,7 @@ const Header = () => {
         <div className="searchinput">
           <div
             onClick={(e) => {
-              searchContent
-                ? (window.location.href = `/search/${searchContent}`)
-                : (window.location.href = '/');
+              searchContent ? navi(`/search/${searchContent}`) : navi('/');
             }}
             className="search__icon"
           >
@@ -31,9 +29,7 @@ const Header = () => {
           </div>
           <input
             onKeyDown={(e) => [
-              e.key === 'Enter'
-                ? (window.location.href = `/search/${searchContent}`)
-                : true,
+              e.key === 'Enter' && navi(`/search/${searchContent}`),
             ]}
             type="text"
             onChange={(e) => {

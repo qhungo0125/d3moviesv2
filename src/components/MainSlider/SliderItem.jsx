@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MainSlider.scss';
 
 const SliderItem = (props) => {
   const { info } = props;
   const [loadMore, setLoadMore] = React.useState(false);
+  const navi = useNavigate();
 
   return (
     <div className="movie__container">
@@ -25,7 +27,7 @@ const SliderItem = (props) => {
             )}
           </p>
           <button
-            onClick={(e) => (window.location.href = `/detail/${info.id}`)}
+            onClick={(e) => navi(`/detail/${info.id}`)}
             className="movie__watch__btn"
           >
             watch now
