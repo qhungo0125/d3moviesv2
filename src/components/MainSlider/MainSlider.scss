@@ -1,0 +1,82 @@
+@use "../../scss/" as *;
+
+.movie__container{
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      .movie__img{
+        background-size: center;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+        filter: brightness(40%);
+        overflow: hidden;
+      }
+      .movie__description{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+
+        @include mobile{
+            flex-direction: column;
+            justify-content: center;
+            flex-direction: column-reverse;
+            padding: 0 1rem;
+        }
+        img{
+            box-shadow: white 0px 10px 50px;
+            // width: 10%;
+            flex-basis: 10%;
+            height: 75%;
+            @include mobile{
+                height: 55%;
+                display: none;
+            }
+            border-radius: 1rem;
+            text-align: left;
+        }
+        .description{
+            flex-basis: 40%;
+            .title{
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .overview{
+                line-height: 1.5;
+                span{
+                    color: #65d1e6;
+                    &:hover{
+                        cursor: pointer;
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .movie__watch__btn{
+                margin: 1rem 0;
+                padding: 0.7rem;
+                border-radius: 0.5rem;
+                border: solid #65d1e6 1px;
+                background-color: transparent;
+                text-transform: capitalize;
+                color: #65d1e6;
+                text-transform: uppercase;
+                font-size: 700;
+                &:hover{
+                    background-color: #65d1e6;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

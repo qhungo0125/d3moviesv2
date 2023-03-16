@@ -1,0 +1,86 @@
+.main__detail{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    .movie__img{
+      background-size: center;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      filter: brightness(40%);
+      overflow: hidden;
+    }
+    .movie__description{
+      margin-top: 8rem;
+      display: flex;
+      flex-direction: row;
+    //   align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      img{
+          box-shadow: white 0px 10px 50px;
+          flex-basis: 10%;
+          height: 75%;
+          border-radius: 1rem;
+          text-align: left;
+      }
+      .description{
+          flex-basis: 50%;
+          .title{
+              color: #cf8e19;
+              text-transform: uppercase;
+              font-weight: 800;
+              font-size: 2rem;
+              margin-bottom: 1rem;
+          }
+        .genres{
+            margin: 1rem 0;
+            span{
+                border-radius: 16px;
+                border: solid #cf8e19 2px;
+                padding: 0.4rem;
+                margin-right: 0.3rem;
+              }
+        }
+          .overview{
+            margin-top: 3rem;
+              line-height: 1.5;
+              span{
+                  color: #65d1e6;
+                  &:hover{
+                      cursor: pointer;
+                      opacity: 0.5;
+                  }
+              }
+          }
+
+          .casters{
+            h3{
+                margin: 1rem 0;
+                text-transform: capitalize;
+                color: #cf8e19;
+            }
+            .casts__collection{
+                display: flex;
+                gap: 1rem;
+                justify-content: space-around;
+                .caster{
+                    flex-basis: 20%;
+                    img{
+                        height: 300px;
+                    }
+                    .caster__name{
+                        text-align: center;
+                        font-weight: 500;
+                    }
+                }
+            }
+          }
+
+      }
+  }
+}

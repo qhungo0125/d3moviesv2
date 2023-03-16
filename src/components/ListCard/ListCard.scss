@@ -1,0 +1,92 @@
+@use "../../scss/" as *;
+
+.listcard__container{
+    margin-top: 8rem;
+    @include tablet{
+        margin-top: 4rem;
+    }
+    text-align: center;
+    .load__btn{
+        margin: 1rem 0;
+        padding: 0.7rem;
+        border-radius: 0.5rem;
+        border: solid #65d1e6 1px;
+        background-color: transparent;
+        text-transform: capitalize;
+        color: #65d1e6;
+        text-transform: uppercase;
+        font-size: 700;
+        &:hover{
+            background-color: #65d1e6;
+            color: white;
+            cursor: pointer;
+        }
+    }
+    .listcard{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        .cardItem{
+            position: relative;
+            // flex-basis: 15%;
+            width: 15%;
+
+            @include tablet{
+                // flex-basis: 25%;
+            width: 30%;
+            }
+
+            @include mobile{
+                // flex-basis: 25%;
+            width: 40%;
+            }
+
+            // height: 400px;
+            .lazy-load-image-background{
+                width: 100%;
+                img{
+                width: 100%;
+                    height: 300px;
+                    border-radius: 0.7rem;
+                }
+            }
+            
+            .overlay{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 0.5rem;
+                &:hover{
+                cursor: pointer;
+                opacity: 0.75;
+                background-image: linear-gradient(to bottom,rgba(235,20,54,0.9) 0%,rgba(123,67,151,0.9) 100%);
+                }
+            }
+            .sub__title{
+                padding: 1rem 0;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                border-radius:0 0 0.5rem 0.5rem;
+                &:hover{
+                    display: block;
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+            }
+            .vote__span{
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-image: linear-gradient(to right,#C02425 0%,#F0CB35 51%,#C02425 100%);
+                padding: 0.5rem;
+                border-radius: 0 0.5rem 0 0;
+            }
+        
+        }
+    }
+}
