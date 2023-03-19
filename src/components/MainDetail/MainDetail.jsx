@@ -3,6 +3,11 @@ import './MainDetail.scss';
 import moviesAPI from '../../api/moviesAPI';
 import CasterItem from './CasterItem';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay } from 'swiper';
+import 'swiper/css/autoplay';
+
 const MainDetail = (props) => {
   const { id } = props;
   const [info, setInfo] = React.useState();
@@ -18,7 +23,7 @@ const MainDetail = (props) => {
       //   console.log('data', data);
     };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     info && (
       <div className="main__detail">
@@ -30,6 +35,7 @@ const MainDetail = (props) => {
 
         <div className="movie__description">
           <img
+            className="movie__ava"
             src={`${import.meta.env.VITE_API_IMGURL}${info.poster_path}`}
             alt={info.title}
           />
@@ -46,9 +52,34 @@ const MainDetail = (props) => {
             <div className="casters">
               <h3>casters:</h3>
               <div className="casts__collection">
-                {casters.map((item, index) => {
-                  return <CasterItem key={index} info={item} />;
-                })}
+                <Swiper
+                  // modules={[Autoplay]}
+                  // autoplay={{ delay: 5000 }}
+                  // loop={true}
+                  // scrollbar={{ draggable: true }}
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 3,
+                      spaceBetween: 5,
+                    },
+                    601: {
+                      slidesPerView: 4,
+                      spaceBetween: 5,
+                    },
+                    1025: {
+                      slidesPerView: 5,
+                      spaceBetween: 5,
+                    },
+                  }}
+                >
+                  {casters.map((item, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <CasterItem info={item} />
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
               </div>
             </div>
           </div>

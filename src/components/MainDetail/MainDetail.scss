@@ -1,6 +1,8 @@
+@use "../../scss/" as *;
+
 .main__detail{
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
     position: relative;
     .movie__img{
       background-size: center;
@@ -12,16 +14,23 @@
     }
     .movie__description{
       margin-top: 8rem;
+      // @include tablet{
+      //   margin-top: 3rem;
+      // }
       display: flex;
       flex-direction: row;
-    //   align-items: center;
       justify-content: space-around;
+      align-items: center;
       position: absolute;
       top: 0;
       bottom: 0;
       right: 0;
       left: 0;
-      img{
+
+      .movie__ava{
+        @include tablet{
+          display: none;
+        }
           box-shadow: white 0px 10px 50px;
           flex-basis: 10%;
           height: 75%;
@@ -29,7 +38,7 @@
           text-align: left;
       }
       .description{
-          flex-basis: 50%;
+        width: 70%;
           .title{
               color: #cf8e19;
               text-transform: uppercase;
@@ -38,6 +47,7 @@
               margin-bottom: 1rem;
           }
         .genres{
+          font-size: 0.8rem;
             margin: 1rem 0;
             span{
                 border-radius: 16px;
@@ -59,25 +69,19 @@
           }
 
           .casters{
+            // @include tablet{
+            //   display: none;
+            // }
+            width: 100%;
             h3{
                 margin: 1rem 0;
                 text-transform: capitalize;
                 color: #cf8e19;
             }
+            
             .casts__collection{
-                display: flex;
-                gap: 1rem;
-                justify-content: space-around;
-                .caster{
-                    flex-basis: 20%;
-                    img{
-                        height: 300px;
-                    }
-                    .caster__name{
-                        text-align: center;
-                        font-weight: 500;
-                    }
-                }
+              width: 100%;
+                
             }
           }
 

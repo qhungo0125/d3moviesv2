@@ -56,7 +56,7 @@ const SubSlider = (props) => {
         break;
       }
     }
-  }, []);
+  }, [id]);
 
   return (
     <div className="sslider__container">

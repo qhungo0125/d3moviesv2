@@ -13,7 +13,7 @@ const Trailer = (props) => {
       //   console.log(trailers.results.slice(0, 2));
     };
     fetchData();
-  }, []);
+  }, [id]);
   return (
     <div className="trailer__container">
       {vidTrailers.map((item, index) => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './CasterItem.scss';
 const CasterItem = (props) => {
   const { info } = props;
   console.log(info);

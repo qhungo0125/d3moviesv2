@@ -1,0 +1,17 @@
+@use "../../scss/" as *;
+    
+.caster{
+    // justify-content: center;
+    text-align: center;
+    img{
+        border-radius: 0.6rem;
+        height: 300px;
+        @include tablet{
+        height: 180px;
+        }
+    }
+    .caster__name{
+        text-align: center;
+        font-weight: 500;
+    }
+}

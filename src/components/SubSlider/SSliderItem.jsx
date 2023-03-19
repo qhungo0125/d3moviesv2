@@ -6,7 +6,9 @@ const SSliderItem = (props) => {
   const { info } = props;
   return (
     <div
-      onClick={(e) => navi(`/detail/${info.id}`)}
+      onClick={(e) => {
+        navi(`../detail/${info.id}`, { replace: true });
+      }}
       className="sub__slider__item"
     >
       <div className="overlay"></div>
